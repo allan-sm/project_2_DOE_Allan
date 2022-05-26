@@ -20,6 +20,15 @@
 
 \usepackage{listings}
 
+\usepackage{lipsum}
+\usepackage{graphicx}
+\ifCLASSOPTIONcompsoc
+    \usepackage[caption=false, font=normalsize, labelfont=sf, textfont=sf]{subfig}
+\else
+\usepackage[caption=false, font=footnotesize]{subfig}
+\fi
+
+
 \lstset{
   basicstyle=\ttfamily,
 }
@@ -65,7 +74,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Windows vs Linux approach for image rendering}
+\title{Performance of Windows vs Linux approach for image rendering}
 
 \author{
 \IEEEauthorblockN{Allan Sánchez Masís}
@@ -83,13 +92,41 @@ This paper shows a comparison through image rendering time, of different Operati
 \end{abstract}
 
 \begin{IEEEkeywords}
-Statistical analysis, Linux, Windows, image rendering
+Linux, Windows, and Virtual Machines for image rendering
 \end{IEEEkeywords}
 
 \section{Introduction}
 Understanding the Operating System (OS) is crucial in computer sciences because the OS is what makes the
 hardware work with the software like an
-interface that allows the executions of process \cite{dhamija2012demographics}.
+interface that allows the executions of processes \cite{dhamija2012demographics}. Thus, it is necessary to understand which OS gives the best performance and facilities according with the different user tasks, it is critical to focus more the researches not only in their qualities, also with numbers and metrics to quantify their performance. \par
+There are different well-known features which OS like Windows and Linux offer for the different spectrum of users and their needs. There are very well-known features of this OS, for example, Linux is free to obtain, meanwhile, Microsoft products are available for a considerable fare \cite{dhamija2012demographics}, and the licenses has a price for every machine where are installed  \cite{duran2006analisis}, on the other hand, Windows is more popular than Windows \cite{duran2006analisis}, thus, typical users prefers Windows because it is what they probably will need for their office jobs, studies, games, and so on, therefore, people is not much familiar with Linux as Windows and require more expertise and learning curve \cite{dhamija2012demographics}.\par
+Considering technical aspects, vast of Linux programs are Open Source, thus, users are able to modify the feature of different software packages according to their necessities, nevertheless, Linux can only run binaries that have been  created for it, whereas Windows has a lot of of programs, significantly more than any other OS \cite{dhamija2012demographics}.\par
+This paper presents a comparison of different OS, the evaluation is done measuring the rendering time of PBR  program specifically, the third version (PBRT-v3) \cite{PBRT}, the scenarios are five: Compiled to run natively on Windows, also natively on Ubuntu, in an Ubuntu virtual machine (U-VM) and a Debian virtual machine (D-VM) using Windows as the host, as well as compiled for Ubuntu operating on the Windows Linux Subsystem (U-WLS). This scenarios under test are studied with 2 factors, the accelerator and the resolution used in PBRT-V3. To make the analysis it is used statisticall analysis based onAnova
+
+\begin{figure} 
+    \centering
+  \subfloat[a\label{1a}]{%
+       \includegraphics[width=0.45\linewidth]{example-image}}
+    \hfill
+  \subfloat[b\label{1b}]{%
+        \includegraphics[width=0.45\linewidth]{example-image}}
+    \\
+  \subfloat[c\label{1c}]{%
+        \includegraphics[width=0.45\linewidth]{example-image}}
+    \hfill
+  \subfloat[d\label{1d}]{%
+        \includegraphics[width=0.45\linewidth]{example-image}}
+  \caption{(a), (b) Some examples from CIFAR-10 \cite{4}. The objects in     
+        single-label images are usually roughly aligned.(c),(d) However, the 
+        assumption of object alignment is not valid for multi-label
+        images. Also note the partial visibility and occlusion
+        between objects in the multi-label images.}
+  \label{fig1} 
+\end{figure}
+
+
+
+
 \section{Conclusions}
 The designed 
 
